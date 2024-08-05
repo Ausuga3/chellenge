@@ -74,8 +74,18 @@ function desencriptarTexto(){
 }
 
 
+function copiarTextoDesencriptado(){
+    const textoDesencriptado = document.querySelector('#resultTextOut').textContent;
+    navigator.clipboard.writeText(textoDesencriptado).then(function(){
+        
+    asignarTextoElemento('#alertMessaje',"Texto copiado al portapapeles");
+    }).catch(function(err) {
+        console.log("Error al copiar el texto: ",err);
+    });
 
+}
 
+document.querySelector('#btnCopiar').addEventListener('click', copiarTextoDesencriptado);
 
 
 function asignarTextoElemento(elemento, texto) {
@@ -84,12 +94,31 @@ function asignarTextoElemento(elemento, texto) {
     return;
 }
 
+
+function copiarTextoEncriptado(){
+    const textoEncriptado = document.querySelector('#resultTextOut').textContent;
+    navigator.clipboard.writeText(textoEncriptado).then(function(){
+
+        asignarTextoElemento('#alertMessaje',"Texto copiado al portapapeles");
+
+    }).catch(function(err){
+        console.log("Error al copiar el texto: ",err)
+    })
+}
+
+
+
+
+
 function confirmarLetrasMinusculas(texto) {
 
     if(texto.match(/[A-Z]/)){
         document.querySelector('#warning').style.color = 'red';
         asignarTextoElemento('#warning', "prohibidas las letras mayusculas");
         return false;
+    }else{
+        document.querySelector('#warning').style.color = 'white';
+        asignarTextoElemento('#warning', "solo letras minusculas, sin acentos y abecedario ingles");
     }
     return true;
 }

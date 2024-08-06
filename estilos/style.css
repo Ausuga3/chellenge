@@ -334,8 +334,13 @@
     }
     .mensajeEncriptado{
         width: 100%;
-        top: 5%;
+        top: 1%;
     }
+    .mensajeEncriptado>h2{
+        
+        font-size: 20px;
+    }
+
     .encriptado>img{
         top: 0;
         display: none;

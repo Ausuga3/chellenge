@@ -13,19 +13,20 @@
                 <textarea name="texto" class="texto" id="texto" cols="30" rows="10" placeholder="Ingresa tu texto aqui"></textarea>
             
             <div class="terminos">
-                <p>Solo terminas minusculas y sin acentos</p>
+                <img src="assets/warning2.svg" alt="warning" >
+                <p class="warning">Solo terminas minusculas y sin acentos</p>
             </div>
             <div class="botones">
-                <button class="btnEncriptar" type="button" onclick="encriptar()">encriptar</button>
+                <button class="btnEncriptar" type="button" onclick="encriptar()">Encriptar</button>
                 <input type="button" class="btnDesencriptar" value="Desencriptar" onclick="desencriptar()">
             </div>
         </div>
         <div class="encriptado">
-            <img src="" alt="muneco">
+            <img src="assets/Muñeco.svg" alt="" id="muneco">
             <div class="mensajeEncriptado" id="mensajeEncriptado">
                 <h2 id="tituloMensaje">Ningun mensaje encontrado</h2>
                 <p id="parrafo">Ingresa el texto que deseas encriptar o desencriptar</p>
-                <textarea name="mensaje" id="mensaje" cols="30" rows="10" class="mensaje"></textarea>
+                <button class="btnCopiar" type="button" onclick="copiar()" >Copiar</button>
             </div>
         </div>
     </div>

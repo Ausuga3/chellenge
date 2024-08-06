@@ -1,69 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/estilos/style.css">
-    <link rel="stylesheet" href="/estilos/reset.css">
-    <title>Encriptador de texto</title>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encriptador</title>
+    <link rel="stylesheet" href="estilos/style.css">
     </head>
-    <body>
-    <header>
-        <div class="contenedor">
-            <div class="headerImg">
-                <img src="assets/Logo.png" alt="logo de alura"/>
-            </div>
-        </div>
-    </header>
 
-    <main>
+    <body>
         <div class="container">
-            <div class="encripter">
-                <form class="encripterForm">
-                    <div class="textIn">
-                        <textarea name="textAreas" id="texto" placeholder="Ingrese su texto aqui" required></textarea>
-                        
-                        <div class="textInformation">
-                            <div class="info">
-                                <img src="/assets/warning.png">
-                                <p id="warning">solo letras minusculas, sin acentos y abecedario ingles</p>
-                            </div>
-                            <div class="textInBtns">
-                                <input id="encriptado" type="button" value="Encriptar" onclick="encriptarTexto()">                                              
-                                <input id="desencriptarBotton" type="button" value="Desencriptar" onclick="desencriptarTexto()">
-                            </div>
-                        </div>
-                    </div>
-                </form>
-                <div class="textOutSec">
-                    <div class="OutContent">
-                        
-                        <div class="content" id="default"  >
-                            <img src="/assets/Muñeco.svg" alt="imagen animada" id="imagenDerecha" >                               
-                            <p id="alertMessaje">Ningun Mensaje Fue Encontrado</p>
-                            <textarea class="textOutArea" id="resultTextOut" disabled readonly></textarea>
-                            <div class="botonCopiar">
-                                <button id="btnCopiar" disabled >Copiar</button>
-                            </div>
-                        </div>
-                        
-                    </div>
-                </div>
+            <div class="encriptar">
+                <textarea name="texto" class="texto" id="texto" cols="30" rows="10" placeholder="Ingresa tu texto aqui"></textarea>
+            
+            <div class="terminos">
+                <p>Solo terminas minusculas y sin acentos</p>
+            </div>
+            <div class="botones">
+                <button class="btnEncriptar" type="button" onclick="encriptar()">encriptar</button>
+                <input type="button" class="btnDesencriptar" value="Desencriptar" onclick="desencriptar()">
             </div>
         </div>
-    </main>
-    <footer>
-        <div class="botonesFooter">
-            <h2> Mis Redes: </h2>
-            <a  class="botonFooter" href="https://github.com/Ausuga3"><img src="assets/github.png">  Git hub</a>
-            <div class="botonesFooter2">
-                <img  src="assets/linkedin.png">
-                <a  class="botonFooter" href="https://www.linkedin.com/in/carlos-andr%C3%A9s-usuga-arenas-546048300/">Linkedin</a>
+        <div class="encriptado">
+            <img src="" alt="muneco">
+            <div class="mensajeEncriptado" id="mensajeEncriptado">
+                <h2 id="tituloMensaje">Ningun mensaje encontrado</h2>
+                <p id="parrafo">Ingresa el texto que deseas encriptar o desencriptar</p>
+                <textarea name="mensaje" id="mensaje" cols="30" rows="10" class="mensaje"></textarea>
             </div>
         </div>
-    </footer>
-    <script src="/logic/app.js"></script>
-    <script src="/logic/desencriptar.js"></script>
+    </div>
     </body>
+    <script src="logica/app.js"></script>    
 </html>
